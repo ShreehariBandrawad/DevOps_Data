@@ -1,7 +1,7 @@
 pipeline{
   agent any
   stages{
-    stage('multi stage'){
+    stage('multistep stage'){
       steps{
         sh 'echo"This is multi step" '
         sh '''
