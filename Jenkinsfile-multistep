@@ -3,12 +3,12 @@ pipeline{
     stages{
         stage('multistep stage'){
             steps{
-                sh 'echo"This is multi step" '
+                sh 'echo "This is multistep"'
                 sh '''
                     echo "By the way, i can do more step here..."
                     ls -lah
                 '''
-      }
+            }
+        }
     }
-  }
 }
