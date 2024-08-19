@@ -5,7 +5,7 @@ pipeline{
       steps{
         sh 'echo"This is multi step" '
         sh '''
-              echo "By the way, i can do more step here...
+              echo "By the way, i can do more step here..."
               ls -lah
         '''
       }
