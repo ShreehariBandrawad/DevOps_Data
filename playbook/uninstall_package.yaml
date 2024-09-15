@@ -1,0 +1,15 @@
+---
+- name: this playbook uninstall the httpd packages in redhat
+  hosts: webservers
+  become: true
+  tasks:
+  - name: stopping httpd service
+    service:
+      name: httpd
+      state: stopped
+
+  - name: uninstall the packages
+    yum:
+      name: httpd
+      state: removed
+
