@@ -1,0 +1,11 @@
+---
+- name: this playbook copys the file from admin to all production servers
+  hosts: all
+  # become: true
+  tasks:
+  - name: copy a file
+    copy:
+      src: /home/ansadmin/index.html
+      dest: /home/ansadmin/microdegree
+      mode: 0777
+      owner: ansadmin

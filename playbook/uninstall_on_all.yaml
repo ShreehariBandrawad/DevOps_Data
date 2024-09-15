@@ -1,0 +1,29 @@
+---
+- name: this playbook uninstall the httpd
+  hosts: appservers
+  become: true
+  tasks:
+  - name: start apache2
+    service:
+      name: apache2
+      state: stopped
+    when: ansible_os_family == "Debian"
+
+  - name: start the service
+    service:
+      name: apache2
+      state: stopped
+    when: ansible_os_family == "RedHat"
+  
+  - name: uninstall package
+    apt:
+      name: apache2
+      state: absent
+    when: ansible_os_family == "Debian"
+
+  - name: uninstall package
+    yum:
+      name: httpd
+      state: removed
+    when: ansible_os_family == "RedHat"
+
